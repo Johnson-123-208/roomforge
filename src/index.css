@@ -1,0 +1,124 @@
+@import "tailwindcss";
+@import "@livekit/components-styles";
+
+:root {
+  /* RoomForge — slate + steel */
+  --bg: #0f172a;
+  --bg-light: #f1f5f9;
+  --secondary-bg: #1e293b;
+  --surface: #ffffff;
+  --surface-hover: #e2e8f0;
+  --surface-elevated: #1e293b;
+  --surface-meeting: #0f172a;
+  --accent: #38bdf8;
+  --accent-hover: #0ea5e9;
+  --accent-soft: rgba(56, 189, 248, 0.14);
+  --accent-deep: #0284c7;
+  --success: #15803d;
+  --danger: #dc2626;
+  --text: #ffffff;
+  --text-muted: #94a3b8;
+  --text-light: #0f172a;
+  --text-light-muted: #64748b;
+  --border: #cbd5e1;
+  --border-dark: rgba(56, 189, 248, 0.28);
+  /* legacy aliases used across components */
+  --gold: var(--accent);
+  --gold-deep: var(--accent-deep);
+  --ivory: #f8fafc;
+  --font-display: "Sora", "Segoe UI", sans-serif;
+  --font-body: "IBM Plex Sans", "Segoe UI", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--bg-light);
+  color: var(--text-light);
+  color-scheme: light;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+input,
+select,
+textarea {
+  color: var(--text-light);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--text-light-muted);
+  opacity: 1;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--text-light);
+  box-shadow: 0 0 0 1000px #ffffff inset;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+.lk-muted-indicator[data-lk-muted="false"] {
+  display: none;
+}
+
+.rf-page {
+  position: relative;
+  isolation: isolate;
+  min-height: 100dvh;
+  color: var(--text-light);
+  background: var(--ivory);
+}
+
+.rf-page__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.rf-page__bg-image {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 20% 10%, rgba(56, 189, 248, 0.18), transparent 60%),
+    radial-gradient(ellipse 60% 45% at 90% 80%, rgba(15, 23, 42, 0.08), transparent 55%),
+    linear-gradient(160deg, #f8fafc 0%, #e2e8f0 100%);
+  opacity: 1;
+}
+
+.rf-page__bg-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(248, 250, 252, 0.55) 0%, transparent 70%),
+    linear-gradient(180deg, rgba(248, 250, 252, 0.55) 0%, rgba(241, 245, 249, 0.9) 45%, rgba(241, 245, 249, 0.98) 100%);
+}
+
+.rf-page__content {
+  position: relative;
+  z-index: 1;
+}

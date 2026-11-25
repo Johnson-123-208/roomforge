@@ -1,0 +1,37 @@
+services:
+  - type: web
+    name: roomforge-api
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npx tsx server/src/index.ts
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: LIVEKIT_URL
+        sync: false
+      - key: LIVEKIT_API_KEY
+        sync: false
+      - key: LIVEKIT_API_SECRET
+        sync: false
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
+      - key: BACKEND_URL
+        sync: false
+      - key: ALLOWED_ORIGINS
+        sync: false
+      - key: CREATE_ACCESS_PASSWORD
+        sync: false
+      - key: TOKEN_TTL_SECONDS
+        value: "7200"
+      - key: MEETING_TTL_HOURS
+        value: "24"
+      - key: HOST_TOKEN_SECRET
+        sync: false
