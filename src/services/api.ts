@@ -8,7 +8,9 @@ import type {
   VerifyJoinedResponse,
 } from '../types/meeting';
 
-const API_BASE = (import.meta.env.VITE_BACKEND_URL ?? '').replace(/\/$/, '');
+const API_BASE = (
+  import.meta.env.VITE_BACKEND_URL || 'https://roomforge-api.onrender.com'
+).replace(/\/$/, '');
 
 export const PUBLIC_LIVEKIT_URL = (import.meta.env.VITE_LIVEKIT_URL ?? '').trim();
 
