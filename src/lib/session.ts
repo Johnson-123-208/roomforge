@@ -1,6 +1,6 @@
 import type { JoinSession } from '../types/meeting';
 
-const SESSION_KEY = 'meetspace:joinSession';
+const SESSION_KEY = 'roomforge:joinSession';
 /** Keep refresh/reconnect sessions for up to the default token lifetime. */
 const MAX_AGE_MS = 2.5 * 60 * 60 * 1000;
 

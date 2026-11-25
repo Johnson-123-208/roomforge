@@ -26,7 +26,7 @@ export function createApp() {
     if (!check.ok) {
       res.status(503).json({
         status: 'misconfigured',
-        service: 'meetspace-api',
+        service: 'roomforge-api',
         errors: check.errors,
       });
       return;
@@ -34,7 +34,7 @@ export function createApp() {
 
     res.status(200).json({
       status: 'ok',
-      service: 'meetspace-api',
+      service: 'roomforge-api',
       livekit_url: check.env.LIVEKIT_URL,
       supabase_url: check.env.SUPABASE_URL,
       frontend_url: check.env.FRONTEND_URL,
